@@ -1,0 +1,49 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Assignment Structure 1
+ */
+#include <iostream>
+
+using namespace std;
+//You will design a building struct
+//keep track of the floors, sq. footage, address, is it eco-friendly (true/false)
+
+//ask the user for four separate buildings and store them in an array of building
+//alter all the buildings are entered, loop through and determine the sq. footage
+//display the total sq. footage of all four buildings to the user.
+
+struct Buildings
+{
+    int floors;
+    double sqFootage;
+    string address;
+    string ecoFriend;
+};
+int main()
+{
+    const int SIZE = 4;
+    Buildings Miami[SIZE];
+    int loop, counter=0;
+
+    for (loop = 0; loop < SIZE; loop++)
+    {
+        cout << "Please enter the Number of floors for building #" << (loop + 1) << " !" << endl;
+        cin >> Miami[loop].floors;
+
+        cout << "Please enter the square footage for building #" << (loop + 1) << " !" << endl;
+        cin >> Miami[loop].sqFootage;
+
+        cout << "Please enter the address for building #" << (loop + 1) << " !" << endl;
+        getline(cin,Miami[loop].address);
+
+        cout << "Please specify if building #" << (loop + 1) << " is Eco-Friendly! (T/F)" << endl;
+        cin >> Miami[loop].ecoFriend;
+    }
+    for (int i = 0; i < SIZE; i++)
+    {
+        counter += Miami[i].sqFootage;
+    }
+        cout << "The total sq. Footage for all buildings is: " << counter << endl;
+    return 0;
+}
