@@ -1,0 +1,64 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Assignment Final
+ */
+#include <iostream>
+#include <iomanip>
+#include <fstrEam>
+#include <vector>
+
+using namespace std;
+
+struct Weatherdata
+{
+    string  EVENT_ID,
+            CZ_NAME_STR,
+            BEGIN_DATE,
+            BEGIN_TIME,
+            EVENT_TYPE,
+            DEATHS_DIRECT,
+            INJURIES_DIRECT,
+            DAMAGE_PROPERTY_NUM,
+            BEGIN_LAT,
+            BEGIN_LON;
+};
+int main()
+{
+    const int EVENTS = 329;
+    vector<string> FINALS_VECTOR[EVENTS];
+    Weatherdata FINAL;
+
+    ifstream inFile;
+    int i = 0;
+
+    inFile.open("weatherdata.csv");
+
+//create a string array
+//add each item to the array
+//push items from the array into the vector
+//change the type by casting when performing your operations for the output requirements
+
+    if (inFile.good())
+    {
+        while (inFile.good())
+        {
+            getline(inFile, FINAL[i].EVENT_ID, ',');
+            getline(inFile, FINAL[i].CZ_NAME_STR, ',');
+            getline(inFile, FINAL[i].BEGIN_DATE, ',');
+            getline(inFile, FINAL[i].BEGIN_TIME, ',');
+            getline(inFile, FINAL[i].EVENT_TYPE, ',');
+            getline(inFile, FINAL[i].DEATHS_DIRECT, ',');
+            getline(inFile, FINAL[i].INJURIES_DIRECT, ',');
+            getline(inFile, FINAL[i].DAMAGE_PROPERTY_NUM, ',');
+            getline(inFile, FINAL[i].BEGIN_LAT, ',');
+            getline(inFile, FINAL[i].BEGIN_LON, ',');
+            i++;
+            FINALS_VECTOR.push_back(FINAL[i]);
+        }
+
+        for (int a=0; a < EVENTS; a++)
+        cout << FINAL[a].EVENT_ID;
+    }
+    return 0;
+}
