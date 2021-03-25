@@ -1,0 +1,64 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Final Review
+ */
+#include <iostream>
+
+using namespace std;
+
+withoutDoubles (int num1, int num2, bool dub)
+{
+    if (num1 < 6 && num1 > 0)
+    {
+        if(num2 < 6 && num2 > 0)
+        {
+            if(num1 == num2)
+            {
+                if(dub)
+                    if(num1 == 6 && num2 == 6)
+                    {
+                        return num1 + 1;
+                    }
+
+                    else
+                {
+                    return num1 + num2 + 1;
+                }
+                else
+                    return num1 + num2;
+            }
+            else
+            {
+                return num1 + num2;
+            }
+        }
+        else
+            cout << "Your number is not within range" << endl;
+    }
+    else
+            cout << "Your number is not within range" << endl;
+}
+int main()
+{
+    int fnumber = 0,snumber = 0;
+    char buffer;
+    bool test;
+
+    cout << "Hello world!" << endl;
+
+    cout << "please enter a double dice roll" << endl;
+    cin >> fnumber;
+    cin >> snumber;
+    cout << "Do you permit doubles? (Y/N)" << endl;
+    cin >> buffer;
+
+    if (buffer == 'Y' || buffer == 'y')
+        test = true;
+    else
+        test = false;
+
+    cout << withoutDoubles(fnumber, snumber, test) << endl;
+
+    return 0;
+}
