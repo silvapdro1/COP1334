@@ -1,0 +1,41 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Assignment Vector
+ */
+#include <iostream>
+#include <vector>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    //Ask the user for their majors at their college.
+    //The majors can keep being added to a vector of string
+    //C++
+    //The program will stop majors when they enter QUIT
+    //Only display majors that start with the letter C... Computer science
+    //string x... [0] will give us the first character. Starts at [0]
+    //Loop to keep asking
+    //getline
+    //vector
+    //is statement
+    string input;
+    vector<string> Majors;
+    do
+    {
+    cout << "Please enter the Major programs your school offers" << endl;
+    getline(cin,input);
+    Majors.push_back(input);
+    }
+    while(input != "QUIT");
+
+    for (int i = 0; i < Majors.size(); i++)
+    {
+        if (Majors[i][0] == 'C' || Majors[i][0] == 'c')
+
+        cout << Majors[i] << endl;
+    }
+    return 0;
+}
