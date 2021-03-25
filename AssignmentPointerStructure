@@ -1,0 +1,55 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Assignment Pointer Structure
+ */
+#include <iostream>
+
+using namespace std;
+
+//create a struct for computers
+//keep track of four relevant xpecs for computer
+//RAM, CPU SPEED, SOTRAGE
+//creat an function that takes a pointer to a struct computer variable
+//send the addresss of a computer to the function
+//Inside of said function, read in the four parts of the computer
+//write a function that displays a computer to the console
+//getData
+//show me before you leave and Happy Thanksgiving
+//showData
+
+struct Computer
+{
+    int RAM, CPUspeed, STORAGE;
+    string Color;
+};
+void getData(Computer *c)
+{
+    cout << "Please enter your computer spces!"<< endl;
+    cout << "RAM: ";
+    cin >> c->RAM;
+
+    cout << "CPU SPEED: ";
+    cin >> c->CPUspeed;
+
+    cout << "HARD DRIVE: ";
+    cin >> c->STORAGE;
+
+    cin.ignore();
+    cout << "COLOR: ";
+    getline(cin, c->Color);
+}
+void showData(Computer c)
+{
+    cout << "RAM: " << c.RAM << endl;
+    cout << "CPU SPEED: " << c.CPUspeed << endl;
+    cout << "HARD DRIVE: " << c.STORAGE << endl;
+    cout << "COLOR: " << c.Color << endl;
+}
+int main()
+{
+    Computer c;
+    getData(&c);
+    showData(c);
+    return 0;
+}
