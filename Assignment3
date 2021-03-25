@@ -1,0 +1,45 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Assignment 3
+ */
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i = 1;
+    do
+{
+        int firstInput = 0, secondInput = 0;
+        char operation;
+        cout << "Please enter a number \n";
+        cin >> firstInput;
+        cout << "Please enter a second number \n";
+        cin >> secondInput;
+        cout << "Please enter M to multiply the numbers and A to add them\n";
+        cin >> operation;
+        if (operation == 'M')
+        {
+           cout << firstInput * secondInput << endl;
+        }
+        else if (operation == 'A')
+        {
+            cout << firstInput + secondInput << endl;
+        }
+        //Ask the user for two numbers.
+        //Ask the user whether they with to add or multiply the numbers.
+        //Display the result.
+        //Ask the user if they wish to continue.\
+
+
+
+        cout << "Enter 1 to continue. Anything else to quit.";
+        cin >> i;
+
+}
+    while (i == 1);
+
+    return 0;
+}
