@@ -1,0 +1,76 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Assignment Structure2 ***Just practice using structures**
+ */
+ 
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+struct Automobile
+{
+    //most important date about an automobile
+    string make, model, VIN;
+    short year;
+    double mpg;
+};
+
+struct EmployeePay
+{
+    string name;    //Employee name
+    int empNum;     //Employee number
+    double payRate; //Hourly pay rate
+    double hours;   //Hours worked
+    double groosPay;//Gross pay
+};
+int main()
+{
+    Automobile mustang;
+    mustang.make = "Ford";
+    mustang.model = "Mustang GT500";
+    mustang.VIN = "AOHOIEHOBFLKLKJ";
+    mustang.year = 2015;
+    mustang.mpg = 14;
+    //We hard coded this car..
+    //Ask the user to read in the make, model, VIN, year and mpg
+    //show it back to the user
+/*
+    Automobile UserCar;
+
+    cout << "Please enter the manufacture of your vehicle: ";
+    cin >> UserCar.make;
+    cout << "Please enter the model of your vehicle: ";
+    cin >> UserCar.model;
+    cout << "Please enter the VIN of your vehicle: ";
+    cin >> UserCar.VIN;
+    cout << "Please enter the year of your vehicle: ";
+    cin >> UserCar.year;
+    cout << "Please enter the mpg of your vehicle: ";
+    cin >> UserCar.mpg;
+
+    cout << "Below are your car Specs" << endl;
+    cout << "Maker: "<< UserCar.make << endl;
+    cout << "Model: "<< UserCar.model << endl;
+    cout << "VIN: "<< UserCar.VIN << endl;
+    cout << "Year: "<< UserCar.year << endl;
+    cout << "MPG: " << UserCar.mpg << endl;
+*/
+
+    EmployeePay employee1 = {"Betty Ross", 141, 18.75};
+    EmployeePay employee2 = {"Jill Sandburg", 142, 17.50};
+
+    cout << setprecision(2) << fixed;
+    cout << "Employee 1:" << endl;
+    cout << "Name: "<< employee1.name << endl;
+    cout << "Employee Number: "<< employee1.empNum << endl;
+    cout << "Pay Rate: "<< employee1.payRate << endl;
+    cout << endl;
+    cout << "Employee 2:" << endl;
+    cout << "Name: "<< employee2.name << endl;
+    cout << "Employee Number: "<< employee2.empNum << endl;
+    cout << "Pay Rate: "<< employee2.payRate << endl;
+
+    return 0;
+}
