@@ -1,0 +1,68 @@
+/*
+ Pedro Silva
+ COP1334 - Tues/Thurs 6:00-740pm
+ Assignment 2
+
+ Last month Billy bought some stock in BillCo, Inc.  Here are some details:
+ Billy purchased 2,000 shares
+ He paid $22.97 per share.
+ He paid a commission of 2.5% the amount he paid for the stock.
+ Three weeks later Billy sold the stock.  Here are the details:
+
+ He sold 2,000 shares.
+ He sold the shares for $27.97
+ He paid his stock broker another commission of 2.5% of the amount he received for the stock.
+
+ Calculate the following:
+ How much Billy paid for the stock.
+ The amount of commission paid to the broker when he bought the stock.
+ The amount Billy sold the stock for.
+ The amount of commission paid his broker when he sold his stock.
+ Display the amount of profit Billy made after selling the stock and paying the two commissions.
+*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    int sharesBought = 2000, sharesSold = 2000;
+    double priceBought = 22.97, priceSold = 27.97, salesCommission, purchaseCommission,
+    totalBought, totalSale, totalProfit;
+    
+    cout << " Welcome to BillCo, Inc.\n";
+    cout << " Below is your stock summary!" << endl;
+    cout << "------------------------------\n";
+    cout << "Bought:" << endl;
+    cout << "August" << setw(24) << "2000 shares" << endl;
+
+    totalBought = sharesBought * priceBought;//How much Billy paid for stock
+
+    cout << setprecision(2) << fixed;
+    cout << "Total:" << setw(21) << totalBought << endl;
+
+    purchaseCommission = (totalBought * .025); //The amount of commission paid fo the broker when bought
+
+    cout << "Commission:" << setw(15) << purchaseCommission << endl;
+    cout << "------------------------------\n";
+    cout << "Sold:" << endl;
+    cout << "September" << setw(21) << "2000 shares" << endl;
+
+    totalSale = sharesSold * priceSold; //The amount Billy sold the stock for
+
+    cout << setprecision(2) << fixed;
+    cout << "Total:" << setw(21) << totalSale << endl;
+
+    salesCommission = (totalSale * .025); //The amount of commission paid fo the broker when sold
+
+    cout << "Commission:" << setw(15) << salesCommission << endl;
+    cout << "\n";
+
+    totalProfit = (totalSale - salesCommission) - (totalBought - purchaseCommission); //profit after selling
+
+                                                                                      //stock and paid broker
+    cout << "TOTAL PROFIT:" << setw(8) << totalProfit << endl;
+    return 0;
+}
+
